@@ -7,7 +7,7 @@
     <groupId>com.example</groupId>
     <artifactId>Xiaobing2019211001001024</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>2019211001001024Xiaobing</name>
+    <name>2019211001001024Xiaoping</name>
     <packaging>war</packaging>
 
     <properties>
@@ -35,6 +35,13 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>8.4.1.jre8</version>
+        </dependency>
+
     </dependencies>
 
     <build>

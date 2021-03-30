@@ -5,7 +5,7 @@
          version="4.0">
     <servlet>
         <servlet-name>AnyName</servlet-name>
-        <servlet-class>com.XiaoBing.week2.demo.HeelopWorldServlet</servlet-class>
+        <servlet-class>com.XiaoBing.week2.demo.HelloWorldServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AnyName</servlet-name>
@@ -15,18 +15,30 @@
         <servlet-name>LifeCycleServlet</servlet-name>
         <servlet-class>com.XiaoBing.week3.demo.LifeCycleServlet</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>LifeCycleServlet</servlet-name>
+        <url-pattern>/Life</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>com.XiaoBing.week3.demo.RegisterServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>LifeCycleServlet</servlet-name>
-        <url-pattern>/Life</url-pattern>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <!--<servlet>
+        <servlet-name>JDBCDemoServlet</servlet-name>
+        <servlet-class>com.XiaoBing.week4.demo.JDBCDemoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JDBCDemoServlet</servlet-name>
+        <url-pattern>/jdbc</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/register</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping>  -->
 
 </web-app>
