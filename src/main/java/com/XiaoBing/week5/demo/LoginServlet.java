@@ -1,4 +1,5 @@
 package com.XiaoBing.week5.demo;
+
 import javax.servlet.ServletException;
 
 import javax.servlet.annotation.WebServlet;
@@ -31,7 +32,7 @@ public class LoginServlet extends HttpServlet {
 
     private String password;
 
-    Connection conn = null;
+    Connection con = null;
 
     ResultSet rs = null;
 
@@ -63,7 +64,7 @@ public class LoginServlet extends HttpServlet {
 
         try {
 
-            conn = DriverManager.getConnection(url, username,password);
+            con = DriverManager.getConnection(url, username,password);
 
         } catch (SQLException e) {
 
@@ -87,7 +88,7 @@ public class LoginServlet extends HttpServlet {
 
         try {
 
-            stat = conn.prepareStatement(sql);
+            stat = con.prepareStatement(sql);
 
             stat.setString(1,username);
 
@@ -103,18 +104,27 @@ public class LoginServlet extends HttpServlet {
 
             if (rs.next()) {
 
-                pw.write("<h1>Login Success!!!</h1>");
+                //pw.write("<h1>Login Success!!!</h1>");
 
-                pw.write("<h1>Welcome,"+username+"</h1>");
+                //pw.write("<h1>Welcome,"+username+"</h1>");
+
+                request.setAttribute("username",rs.getInt("id"));
+                request.setAttribute("useranme",rs.getString("username"));
+                request.setAttribute("password",rs.getString("password"));
+                request.setAttribute("email",rs.getString("email"));
+                request.setAttribute("gender",rs.getString("gender"));
+                request.setAttribute("birthdate",rs.getString("birthdate"));
+
+                request.getRequestDispatcher("userInfo.jsp").forward(request,response);
+
 
             }
-
-
-
             else {
 
-                pw.write("<h1>Login Error!</h1>");
+                //pw.write("<h1>Login Error!</h1>");
 
+                request.setAttribute("massage","Username or Password Error!!!");
+                request.getRequestDispatcher("login.jsp").forward(request,response);
             }
 
 
@@ -145,7 +155,7 @@ public class LoginServlet extends HttpServlet {
 
         try {
 
-            conn.close();
+            con.close();
 
             stat.close();
 
