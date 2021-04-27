@@ -4,10 +4,6 @@ import com.XiaoBing.dao.UserDao;
 
 import com.XiaoBing.model.User;
 
-import sun.security.util.Password;
-
-
-
 import javax.servlet.*;
 
 import javax.servlet.http.*;
@@ -16,11 +12,7 @@ import javax.servlet.annotation.*;
 
 import java.io.IOException;
 
-import java.io.PrintWriter;
-
 import java.sql.*;
-
-import java.text.SimpleDateFormat;
 
 
 
@@ -68,7 +60,37 @@ public class LoginServlet extends HttpServlet {
 
             if(user!=null){
 
-                request.setAttribute("user",user);
+                String rememberMe=request.getParameter("rememberMe");
+
+                if(rememberMe!=null&&rememberMe.equals("1")){
+
+                    Cookie usernameCookie=new Cookie("cUsername",user.getUsername());
+
+                    Cookie passwordCookie=new Cookie("cPassword",user.getPassword());
+
+                    Cookie rememberMeCookie=new Cookie("cRememberMe",rememberMe);
+
+                    usernameCookie.setMaxAge(5);
+
+                    passwordCookie.setMaxAge(5);
+
+                    rememberMeCookie.setMaxAge(5);
+
+                    response.addCookie(usernameCookie);
+
+                    response.addCookie(passwordCookie);
+
+                    response.addCookie(rememberMeCookie);
+
+                }
+
+                HttpSession session=request.getSession();
+
+                System.out.println("session id-->"+session.getId());
+
+                session.setMaxInactiveInterval(10);
+
+                session.setAttribute("user",user);
 
                 request.getRequestDispatcher("WEB-INF/views/userInfo.jsp").forward(request,response);
 
@@ -132,9 +154,9 @@ public class LoginServlet extends HttpServlet {
 
             }
 
-        } catch (SQLException throwable) {
+        } catch (SQLException throwables) {
 
-            throwable.printStackTrace();
+            throwables.printStackTrace();
 
         }*/
 
