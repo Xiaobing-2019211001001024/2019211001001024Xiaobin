@@ -70,9 +70,9 @@ public class User {
 
 
 
-    public void setUsername(String usernamne) {
+    public void setUsername(String username) {
 
-        this.username = usernamne;
+        this.username = username;
 
     }
 
