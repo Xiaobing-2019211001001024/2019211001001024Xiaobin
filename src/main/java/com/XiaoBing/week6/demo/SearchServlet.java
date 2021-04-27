@@ -8,6 +8,8 @@ import javax.servlet.annotation.*;
 
 import java.io.IOException;
 
+import java.net.URLEncoder;
+
 
 
 @WebServlet(name = "SearchServlet", urlPatterns = {"/search"})
@@ -18,9 +20,7 @@ public class SearchServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String txt=new String(request.getParameter("txt").getBytes("iso-8859-1"),"gbk");
-
-        //The solution to Chinese garbled code found on the Internet does not work
+        String txt=request.getParameter("txt");
 
         String search=request.getParameter("search");
 
@@ -32,15 +32,15 @@ public class SearchServlet extends HttpServlet {
 
             if(search.equals("baidu")){
 
-                response.sendRedirect("https://www.baidu.com/s?wd="+txt);
+                response.sendRedirect("https://www.baidu.com/s?wd="+ URLEncoder.encode(txt));
 
             }else if(search.equals("bing")){
 
-                response.sendRedirect("https://cn.bing.com/search?q="+txt);
+                response.sendRedirect("https://cn.bing.com/search?q="+URLEncoder.encode(txt));
 
             }else if(search.equals("google")){
 
-                response.sendRedirect("https://www.google.com/search?q="+txt);
+                response.sendRedirect("https://www.google.com/search?q="+URLEncoder.encode(txt));
 
             }
 
