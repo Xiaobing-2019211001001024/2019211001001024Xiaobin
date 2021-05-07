@@ -30,7 +30,7 @@ public class UserDao implements IUserDao{
 
         PreparedStatement pstmt= con.prepareStatement(sql);
 
-        pstmt.setString(1,user.getUsernamne());
+        pstmt.setString(1,user.getUsername());
 
         pstmt.setString(2,user.getPassword());
 
@@ -76,7 +76,7 @@ public class UserDao implements IUserDao{
 
         PreparedStatement pstmt= con.prepareStatement(sql);
 
-        pstmt.setString(1,user.getUsernamne());
+        pstmt.setString(1,user.getUsername());
 
         pstmt.setString(2,user.getPassword());
 
@@ -114,7 +114,7 @@ public class UserDao implements IUserDao{
 
             user.setId(rs.getInt("id"));
 
-            user.setUsernamne(rs.getString("username"));
+            user.setUsername(rs.getString("username"));
 
             user.setPassword(rs.getString("password"));
 
@@ -154,7 +154,7 @@ public class UserDao implements IUserDao{
 
             user.setId(rs.getInt("id"));
 
-            user.setUsernamne(rs.getString("username"));
+            user.setUsername(rs.getString("username"));
 
             user.setPassword(rs.getString("password"));
 
@@ -196,7 +196,7 @@ public class UserDao implements IUserDao{
 
             user.setId(rs.getInt("id"));
 
-            user.setUsernamne(rs.getString("username"));
+            user.setUsername(rs.getString("username"));
 
             user.setPassword(rs.getString("password"));
 
@@ -238,7 +238,7 @@ public class UserDao implements IUserDao{
 
             user.setId(rs.getInt("id"));
 
-            user.setUsernamne(rs.getString("username"));
+            user.setUsername(rs.getString("username"));
 
             user.setPassword(rs.getString("password"));
 
@@ -280,7 +280,7 @@ public class UserDao implements IUserDao{
 
             user.setId(rs.getInt("id"));
 
-            user.setUsernamne(rs.getString("username"));
+            user.setUsername(rs.getString("username"));
 
             user.setPassword(rs.getString("password"));
 
@@ -322,7 +322,7 @@ public class UserDao implements IUserDao{
 
             user.setId(rs.getInt("id"));
 
-            user.setUsernamne(rs.getString("username"));
+            user.setUsername(rs.getString("username"));
 
             user.setPassword(rs.getString("password"));
 
@@ -364,7 +364,7 @@ public class UserDao implements IUserDao{
 
             user.setId(rs.getInt("id"));
 
-            user.setUsernamne(rs.getString("username"));
+            user.setUsername(rs.getString("username"));
 
             user.setPassword(rs.getString("password"));
 
@@ -404,7 +404,7 @@ public class UserDao implements IUserDao{
 
             user.setId(rs.getInt("id"));
 
-            user.setUsernamne(rs.getString("username"));
+            user.setUsername(rs.getString("username"));
 
             user.setPassword(rs.getString("password"));
 
