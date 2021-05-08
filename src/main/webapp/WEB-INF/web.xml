@@ -15,7 +15,7 @@
 
         <servlet-name>anyName</servlet-name>
 
-        <url-pattern>/hello</url-pattern>
+        <url-pattern>/hello_test</url-pattern>
 
     </servlet-mapping>
 
