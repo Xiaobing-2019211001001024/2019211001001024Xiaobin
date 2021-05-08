@@ -8,7 +8,7 @@
 					<div class="login-form"><!--login form-->
 					<h2>Login to your account</h2>	<%
     if(!(request.getAttribute("message")==null)){
-    out.println("<h2>"+request.getAttribute("message")+"</h2>");
+    out.print("<h2>"+request.getAttribute("message")+"</h2>");
 }%>
 <%
     Cookie[] cookies=request.getCookies();
