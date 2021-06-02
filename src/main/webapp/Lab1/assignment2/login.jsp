@@ -13,7 +13,7 @@
 </head>
 <body>
 <%-- todo 9: use c:out to print message fron request --%>
-<%=//request.getAttribute("message")%>
+
 
 <%--todo 1: use c:url to set url in action="validate.jsp" --%>
 <form action="validate.jsp">
