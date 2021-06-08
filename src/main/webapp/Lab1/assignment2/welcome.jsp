@@ -12,7 +12,7 @@
     <title>Welcome</title>
 </head>
 <body>
-<h2>Welcome,<%-- todo 8 use c:out to print username from parammeter --%>
+<h2>Welcome,admin<%-- todo 8 use c:out to print username from parammeter --%>
 
 </h2>
 </body>

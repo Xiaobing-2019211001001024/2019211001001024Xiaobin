@@ -39,8 +39,8 @@ public class Order implements java.io.Serializable {
 
 	/** minimal constructor */
 	public Order(int customerId, int paymentId,
-			Timestamp orderDate, String firstName, String lastName,
-			String address1) {
+				 Timestamp orderDate, String firstName, String lastName,
+				 String address1) {
 		this.customerId = customerId;
 		this.paymentId = paymentId;
 		this.orderDate = orderDate;
@@ -51,10 +51,10 @@ public class Order implements java.io.Serializable {
 
 	/** full constructor */
 	public Order(int customerId, int paymentId,
-			Timestamp orderDate, String firstName, String lastName,
-			String address1, String address2, String city, String state,
-			String postalCode, String country, String phone, String notes,
-			Double orderTotal) {
+				 Timestamp orderDate, String firstName, String lastName,
+				 String address1, String address2, String city, String state,
+				 String postalCode, String country, String phone, String notes,
+				 Double orderTotal) {
 		this.customerId = customerId;
 		this.paymentId = paymentId;
 		this.orderDate = orderDate;
